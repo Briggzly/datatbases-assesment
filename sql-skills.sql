@@ -62,6 +62,11 @@ FROM invoice i
 JOIN customer c
 ON i.customer_id = c.customer_id
 
+SELECT c.first_name,c.last_name,e.first_name AS support_first,e.last_name AS support_last 
+FROM customer c
+JOIN employee e
+ON c.customer_id = e.employee_id
+WHERE e.title = 'Sales Support Agent'
 
 SELECT al.title,a.name AS artist
 FROM album al
